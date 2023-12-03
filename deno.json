@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "deploy": {
+    "project": "17da73ba-07d5-4d42-afd3-892f99645116",
+    "exclude": [],
+    "include": [],
+    "entrypoint": "main.ts"
+  }
+}
