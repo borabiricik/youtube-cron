@@ -9,10 +9,14 @@ const main = async () => {
     id: ["y3XNsCrGdPU"],
     part: ["snippet", "statistics"],
   })
-  const newTitle = `Bu videonun ${data.items?.[0].statistics?.viewCount} izlenmesi ve ${data.items?.[0].statistics?.likeCount} beğenisi var.`
-  console.log({ data })
-  const { data: responseData } = await youtube.videos.update({
-    part: ["snippet"],
+
+  const viewCount = data.items?.[0].statistics?.viewCount
+  const likeCount = data.items?.[0].statistics?.likeCount
+
+  const newTitle = `Bu videonun ${viewCount} görüntülenmesi ve ${likeCount} beğenisi var`
+
+  const { data: updateData } = await youtube.videos.update({
+    part: ["snippet", "statistics"],
     requestBody: {
       id: "y3XNsCrGdPU",
       snippet: {
@@ -21,7 +25,5 @@ const main = async () => {
       },
     },
   })
-  console.log({ responseData })
+  console.log({ updateData })
 }
-
-main()
