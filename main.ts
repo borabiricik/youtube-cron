@@ -1,5 +1,7 @@
 import { youtube } from "./deps.ts"
 
+// Bora Biricik
+
 Deno.cron("Youtube cron", "*/1 * * * *", () => {
   main()
 })
